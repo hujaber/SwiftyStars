@@ -17,19 +17,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x5U-qr-Ky7" customClass="StarsView" customModule="SwiftyStars">
-                                <rect key="frame" x="87" y="418" width="240" height="60"/>
+                                <rect key="frame" x="10" y="418" width="394" height="60"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Xh4-VF-lcj"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="starColor">
+                                        <color key="value" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="numberOfStars">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="x5U-qr-Ky7" secondAttribute="trailing" constant="87" id="5BY-OV-aNo"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="x5U-qr-Ky7" secondAttribute="trailing" constant="10" id="5BY-OV-aNo"/>
                             <constraint firstItem="x5U-qr-Ky7" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="AXC-df-Buk"/>
                             <constraint firstItem="x5U-qr-Ky7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CCz-bQ-mZD"/>
-                            <constraint firstItem="x5U-qr-Ky7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="87" id="JPW-GS-VYZ"/>
+                            <constraint firstItem="x5U-qr-Ky7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="JPW-GS-VYZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

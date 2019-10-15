@@ -10,7 +10,18 @@ import UIKit
 
 final class StarsView: UIView {
     
-    public var numberOfStars = 5
+    @IBInspectable public var numberOfStars: Int = 5 {
+        didSet {
+            var arr = [UIImageView]()
+            for _ in 0..<numberOfStars {
+                arr.append(emptyStarImageView)
+            }
+            stackView.subviews.forEach({ $0.removeFromSuperview() })
+            imageViews.removeAll()
+            imageViews.append(contentsOf: arr)
+            imageViews.forEach({ stackView.addArrangedSubview($0) })
+        }
+    }
     
     public var currentRating = 3 {
         didSet {
@@ -22,9 +33,19 @@ final class StarsView: UIView {
         didSet {
             if selectedRating != oldValue {
                 UISelectionFeedbackGenerator().selectionChanged()
+                didChangeSelection?(selectedRating)
             }
         }
     }
+    
+    @IBInspectable public var starColor: UIColor? {
+        didSet {
+            imageViews.forEach({ $0.tintColor = starColor })
+        }
+    }
+    
+    public var didChangeSelection: ((Int) -> Void)?
+    
     
     private let stackView: UIStackView = {
         let stackView = UIStackView()
@@ -44,11 +65,11 @@ final class StarsView: UIView {
     }
     
     private var filledImage: UIImage {
-        UIImage(named: "starFilledLarge", in: Bundle(for: Self.self), compatibleWith: nil)!
+        UIImage(named: "starFilledLarge", in: Bundle(for: Self.self), compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
     }
     
     private var emptyImage: UIImage {
-        UIImage(named: "starEmptyLarge", in: Bundle(for: Self.self), compatibleWith: nil)!
+        UIImage(named: "starEmptyLarge", in: Bundle(for: Self.self), compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
     }
     
     private lazy var imageViews: [UIImageView] = {
