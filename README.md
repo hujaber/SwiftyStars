@@ -1,1 +1,3 @@
 # SwiftyStars
+
+`pod 'SwiftyStars'
