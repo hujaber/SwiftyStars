@@ -2,7 +2,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "SwiftyStars"
-  spec.version      = "0.0.2"
+  spec.version      = "0.0.3"
   spec.summary      = "A view with stars to use for ratings."
 
   spec.description  = <<-DESC
