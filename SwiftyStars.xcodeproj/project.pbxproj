@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D769177623566E8500974B14 /* screenshot1.png in Resources */ = {isa = PBXBuildFile; fileRef = D769177523566E8400974B14 /* screenshot1.png */; };
+		D769177823566F2400974B14 /* screenshot1.png in Resources */ = {isa = PBXBuildFile; fileRef = D769177723566F2400974B14 /* screenshot1.png */; };
 		D7A45CA32355E5AB006159FC /* SwiftyStars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7A45C992355E5AB006159FC /* SwiftyStars.framework */; };
 		D7A45CA82355E5AB006159FC /* SwiftyStarsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A45CA72355E5AB006159FC /* SwiftyStarsTests.swift */; };
 		D7A45CAA2355E5AB006159FC /* SwiftyStars.h in Headers */ = {isa = PBXBuildFile; fileRef = D7A45C9C2355E5AB006159FC /* SwiftyStars.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -54,7 +54,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		D769177523566E8400974B14 /* screenshot1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screenshot1.png; sourceTree = "<group>"; };
+		D769177723566F2400974B14 /* screenshot1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screenshot1.png; sourceTree = "<group>"; };
 		D7A45C992355E5AB006159FC /* SwiftyStars.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyStars.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7A45C9C2355E5AB006159FC /* SwiftyStars.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftyStars.h; sourceTree = "<group>"; };
 		D7A45C9D2355E5AB006159FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -102,7 +102,7 @@
 		D7A45C8F2355E5AB006159FC = {
 			isa = PBXGroup;
 			children = (
-				D769177523566E8400974B14 /* screenshot1.png */,
+				D769177723566F2400974B14 /* screenshot1.png */,
 				D7A45C9B2355E5AB006159FC /* SwiftyStars */,
 				D7A45CA62355E5AB006159FC /* SwiftyStarsTests */,
 				D7A45CBC2355E637006159FC /* SwiftyStarsExample */,
@@ -277,8 +277,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D769177623566E8500974B14 /* screenshot1.png in Resources */,
 				D7A45CB42355E5B9006159FC /* Assets.xcassets in Resources */,
+				D769177823566F2400974B14 /* screenshot1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
