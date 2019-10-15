@@ -44,11 +44,11 @@ final class StarsView: UIView {
     }
     
     private var filledImage: UIImage {
-        UIImage(named: "starFilledLarge")!
+        UIImage(named: "starFilledLarge", in: Bundle(for: Self.self), compatibleWith: nil)!
     }
     
     private var emptyImage: UIImage {
-        UIImage(named: "starEmptyLarge")!
+        UIImage(named: "starEmptyLarge", in: Bundle(for: Self.self), compatibleWith: nil)!
     }
     
     private lazy var imageViews: [UIImageView] = {
