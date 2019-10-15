@@ -8,8 +8,9 @@
 
 import UIKit
 
-final class StarsView: UIView {
+public class StarsView: UIView {
     
+    /// The total number of stars in the view. Default value is 5
     @IBInspectable public var numberOfStars: Int = 5 {
         didSet {
             var arr = [UIImageView]()
@@ -23,30 +24,48 @@ final class StarsView: UIView {
         }
     }
     
+    /// Set the current rating, default is 3.
     public var currentRating = 3 {
         didSet {
             updateCurrentStars(oldValue: oldValue)
         }
     }
     
+    /// Indicates if a haptic feedback should be generated when tapping a star. Default is true
+    @IBInspectable public var generateHapticFeedbackOnSelection: Bool = true
+    
+    /// Private: The selected rating,
     private(set) var selectedRating: Int = 1 {
         didSet {
             if selectedRating != oldValue {
-                UISelectionFeedbackGenerator().selectionChanged()
+                if generateHapticFeedbackOnSelection {
+                    UISelectionFeedbackGenerator().selectionChanged()
+                }
                 didChangeSelection?(selectedRating)
             }
         }
     }
     
+    /// The color of the star
     @IBInspectable public var starColor: UIColor? {
         didSet {
             imageViews.forEach({ $0.tintColor = starColor })
         }
     }
     
+    /// Closure indicating that the selection did change, returns the value
+    /// of the selection
     public var didChangeSelection: ((Int) -> Void)?
     
     
+    /// Used to adjust the spacing distance between stars
+    @IBInspectable public var starsSpacing: NSNumber? {
+        didSet {
+            stackView.spacing = CGFloat(starsSpacing!.floatValue)
+        }
+    }
+    
+    /// StackView that holds imageviews
     private let stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -56,6 +75,7 @@ final class StarsView: UIView {
         return stackView
     }()
     
+    /// Image view initiated with empty stars images
     private var emptyStarImageView: UIImageView {
         let imgView = UIImageView()
         imgView.image = emptyImage
@@ -64,14 +84,17 @@ final class StarsView: UIView {
         return imgView
     }
     
-    private var filledImage: UIImage {
+    /// The image of the filled star
+    open var filledImage: UIImage {
         UIImage(named: "starFilledLarge", in: Bundle(for: Self.self), compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
     }
     
-    private var emptyImage: UIImage {
+    /// The image of the empty star
+    open var emptyImage: UIImage {
         UIImage(named: "starEmptyLarge", in: Bundle(for: Self.self), compatibleWith: nil)!.withRenderingMode(.alwaysTemplate)
     }
     
+    /// Initial image views
     private lazy var imageViews: [UIImageView] = {
         var arr = [UIImageView]()
         for i in 0..<numberOfStars {
@@ -79,6 +102,7 @@ final class StarsView: UIView {
         }
         return arr
     }()
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -90,7 +114,7 @@ final class StarsView: UIView {
         setup()
     }
     
-    override func awakeFromNib() {
+    override public func awakeFromNib() {
         super.awakeFromNib()
         setup()
     }
@@ -111,12 +135,12 @@ final class StarsView: UIView {
     }
     
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         handleTouches(touches)
     }
     
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override public func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesMoved(touches, with: event)
         handleTouches(touches)
     }
