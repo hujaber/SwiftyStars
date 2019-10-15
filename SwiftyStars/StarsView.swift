@@ -31,7 +31,8 @@ public class StarsView: UIView {
         }
     }
     
-    /// Indicates if a haptic feedback should be generated when tapping a star. Default is true
+    /// Indicates if a haptic feedback should be generated when tapping a star.
+    /// Default is true
     @IBInspectable public var generateHapticFeedbackOnSelection: Bool = true
     
     /// Private: The selected rating,
@@ -56,7 +57,6 @@ public class StarsView: UIView {
     /// Closure indicating that the selection did change, returns the value
     /// of the selection
     public var didChangeSelection: ((Int) -> Void)?
-    
     
     /// Used to adjust the spacing distance between stars
     @IBInspectable public var starsSpacing: NSNumber? {
@@ -104,12 +104,12 @@ public class StarsView: UIView {
     }()
     
     
-    override init(frame: CGRect) {
+    override public init(frame: CGRect) {
         super.init(frame: frame)
         setup()
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         super.init(coder: coder)
         setup()
     }

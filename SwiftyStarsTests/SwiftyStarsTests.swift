@@ -10,9 +10,11 @@ import XCTest
 @testable import SwiftyStars
 
 class SwiftyStarsTests: XCTestCase {
+    
+    var starsView: StarsView!
 
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        starsView = StarsView()
     }
 
     override func tearDown() {
@@ -23,12 +25,14 @@ class SwiftyStarsTests: XCTestCase {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
+    
+    func testSettingNumberOfStarsPerformance() {
         self.measure {
-            // Put the code you want to measure the time of here.
+            starsView.numberOfStars = 10
+            starsView.currentRating = 5
         }
     }
+
+   
 
 }
