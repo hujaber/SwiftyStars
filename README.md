@@ -30,6 +30,8 @@ You can use Cocoapods to install `SwiftStars` by adding it to your Podfile:
 1. Storyboards: Drop a UIView and set its class to StarsView. The color, number of stars and spacing between stars can be
 adjusted from IB.
 
+### OR
+
 2. Initiating an instance and passing a frame:
 ```
 import StarsView
@@ -37,6 +39,7 @@ let starsView = StarsView(frame: .init(x: 0, y: 0, width: 200, height: 50)
 starsView.numberOfStars = 5
 starsView.starColor = .red
 ```
+### OR
 
 3. Adding view using autlayout from code:
 
