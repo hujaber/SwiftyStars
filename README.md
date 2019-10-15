@@ -2,6 +2,7 @@
 
 SwiftyStars is a star rating control for iOS written in Swift 5.0.
 
+<img src="https://github.com/hujaber/SwiftyStars/blob/master/screenshot1.png" width="500">
 
 # Features
 
